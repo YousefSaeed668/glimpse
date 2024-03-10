@@ -10,10 +10,7 @@ const liveblocks = new Liveblocks({
 export async function POST(request: Request) {
   const authoriztion = await auth();
   const user = await currentUser();
-  console.log("AUTH_INFO", {
-    user,
-    authoriztion,
-  });
+
   if (!user || !authoriztion) {
     return new Response("Unauthorized", { status: 403 });
   }
