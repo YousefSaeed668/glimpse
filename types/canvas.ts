@@ -8,7 +8,7 @@ export type Camera = {
   y: number;
 };
 export enum LayerType {
-  Recangle,
+  Rectangle,
   Ellipse,
   Path,
   Text,
@@ -16,7 +16,7 @@ export enum LayerType {
 }
 
 export type RecangleLayer = {
-  type: LayerType.Recangle;
+  type: LayerType.Rectangle;
   x: number;
   y: number;
   height: number;
@@ -98,7 +98,7 @@ export type CanvasState =
       mode: CanvasMode.Inserting;
       layerType:
         | LayerType.Ellipse
-        | LayerType.Recangle
+        | LayerType.Rectangle
         | LayerType.Text
         | LayerType.Note;
     }
@@ -124,3 +124,10 @@ export enum CanvasMode {
   Resizing,
   Pencil,
 }
+
+export type Layer =
+  | RecangleLayer
+  | EllipseLayer
+  | PathLayer
+  | TextLayer
+  | NoteLayer;
